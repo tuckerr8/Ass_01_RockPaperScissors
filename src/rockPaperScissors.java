@@ -97,12 +97,9 @@ public class rockPaperScissors {
             }
 
             //Error check
-            if(!playerAInput.equalsIgnoreCase("S" + "R" + "P")){
-                System.out.println("You entered a invalid value.");
-            }
-
-            if(!playerBInput.equalsIgnoreCase("S" + "R" + "P")){
-                System.out.println("You entered a invalid value.");
+            if(!playerAInput.equalsIgnoreCase("S" + "R" + "P" + "s" + "r" + "p") && !playerBInput.equalsIgnoreCase("S" + "R" + "P" + "s" + "r" + "p")){
+                done = false;
+                System.out.println("You entered an invalid value.");
             }
 
             //Ask user to continue?
@@ -117,6 +114,12 @@ public class rockPaperScissors {
             if (userResp.equalsIgnoreCase("Y")){
                 done = false;
             }else if(userResp.equalsIgnoreCase("N")){
+                done = true;
+            }else if(!userResp.equalsIgnoreCase("Y")) {
+                System.out.println("invalid");
+                done = true;
+            }else if(!userResp.equalsIgnoreCase("N")){
+                System.out.println("invalid");
                 done = true;
             }
 
