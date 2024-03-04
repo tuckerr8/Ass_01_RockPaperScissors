@@ -5,8 +5,7 @@ public class rockPaperScissors {
         //Setup string responses and boolean
         String playerAInput = "";
         String playerBInput = "";
-        boolean done1 = false;
-        boolean done2 = false;
+        boolean done = false;
         String userResp = "";
 
         //Start scanning for input commands
@@ -38,108 +37,72 @@ public class rockPaperScissors {
             if (playerAInput.equalsIgnoreCase("R")) {
                 if (playerBInput.equalsIgnoreCase("S")) {
                     System.out.println("Rock beats scissors!");
-                    done1 = true;
-                } else {
-                    System.out.println("You entered an invalid value.");
                 }
-            }else{
-                System.out.println("You entered an invalid value.");
             }
 
             //Rock and Paper
             if (playerAInput.equalsIgnoreCase("R")) {
                 if (playerBInput.equalsIgnoreCase("P")) {
                     System.out.println("Paper beats Rock!");
-                    done1 = true;
-                } else {
-                    System.out.println("You entered an invalid value.");
                 }
-            }else{
-                System.out.println("You entered an invalid value.");
             }
 
             //Rock and Rock
             if (playerAInput.equalsIgnoreCase("R")) {
                 if (playerBInput.equalsIgnoreCase("R")) {
                     System.out.println("It's a tie!");
-                    done1= true;
-                } else {
-                    System.out.println("You entered an invalid value.");
                 }
-            }else{
-                System.out.println("You entered an invalid value.");
             }
 
             //Paper and Paper
             if (playerAInput.equalsIgnoreCase("P")) {
                 if (playerBInput.equalsIgnoreCase("P")) {
                     System.out.println("It's a tie!");
-                    done1 = true;
-                } else {
-                    System.out.println("You entered an invalid value.");
                 }
-            }else{
-                System.out.println("You entered an invalid value.");
             }
 
             //Paper and Scissors
             if (playerAInput.equalsIgnoreCase("P")) {
                 if (playerBInput.equalsIgnoreCase("S")) {
                     System.out.println("Scissors beats paper!");
-                    done1 = true;
-                } else {
-                    System.out.println("You entered an invalid value.");
                 }
-            }else{
-                System.out.println("You entered an invalid value.");
             }
 
             //Paper and Rock
             if (playerAInput.equalsIgnoreCase("P")) {
                 if (playerBInput.equalsIgnoreCase("R")) {
                     System.out.println("Paper beats rock!");
-                    done1 = true;
-                } else {
-                    System.out.println("You entered an invalid value.");
                 }
-            }else{
-                System.out.println("You entered an invalid value.");
             }
 
             //Scissors and Scissors
             if (playerAInput.equalsIgnoreCase("S")) {
                 if (playerBInput.equalsIgnoreCase("S")) {
                     System.out.println("Its a tie!");
-                    done1 = true;
-                } else {
-                    System.out.println("You entered an invalid value.");
                 }
-            }else{
-                System.out.println("You entered an invalid value.");
             }
 
             //Scissors and Paper
             if (playerAInput.equalsIgnoreCase("S")) {
                 if (playerBInput.equalsIgnoreCase("P")) {
                     System.out.println("Scissors beats paper!");
-                    done1 = true;
-                } else {
-                    System.out.println("You entered an invalid value.");
                 }
-            }else{
-                System.out.println("You entered an invalid value.");
             }
 
             //Scissors and Rock
             if (playerAInput.equalsIgnoreCase("S")) {
                 if (playerBInput.equalsIgnoreCase("R")) {
                     System.out.println("Rock beats scissors!");
-                    done1 = true;
-                } else {
-                    System.out.println("You entered an invalid value.");
                 }
-            }else{
-                System.out.println("You entered an invalid value.");
+            }
+
+            //Error check
+            if(!playerAInput.equalsIgnoreCase("S" + "R" + "P")){
+                System.out.println("You entered a invalid value.");
+            }
+
+            if(!playerBInput.equalsIgnoreCase("S" + "R" + "P")){
+                System.out.println("You entered a invalid value.");
             }
 
             //Ask user to continue?
@@ -151,16 +114,13 @@ public class rockPaperScissors {
             }
 
             //Assess user response
-            if(!done1)
-            {
-                if(userResp.equalsIgnoreCase("N"))
-                {
-                    done2 = true;
-                }else if(userResp.equalsIgnoreCase("Y"))
-                    done2 = false;
-                }
+            if (userResp.equalsIgnoreCase("Y")){
+                done = false;
+            }else if(userResp.equalsIgnoreCase("N")){
+                done = true;
+            }
 
-        }while(!done2);
+        }while(!done);
 
     }
 }
